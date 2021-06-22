@@ -91,7 +91,7 @@ img {
     overflow: hidden;
   }
   
-  .slider {
+  /* .slider {
     display: flex;
     width: 400%;
     height: 300px;
@@ -118,7 +118,7 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
+  } */
   .slider__btn {
     position: absolute;
     width: 40px;
@@ -156,9 +156,12 @@ img {
   .slider__title {
     font-size: 2.2em;
     margin: 0;
+    background: rgba(63, 60, 60, 0.521);
   }
   .slider__txt {
     margin: 5px 0;
+    background: rgba(71, 67, 67, 0.521);
+
   }
   .btn-shop {
     display: block;

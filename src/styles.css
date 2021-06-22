@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(https://fonts.googleapis.com/css?family=Inconsolata);
+
+@font-face {
+  font-family: "Inconsolata";
+  src: url(/src/assets/fonts/inconsolata.ttf);
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(/src/assets/fonts/Poppins-Bold.ttf);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Inconsolata";
+}
+
+.btn {
+  cursor: pointer;
+}

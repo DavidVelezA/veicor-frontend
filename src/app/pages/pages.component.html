@@ -1,0 +1,67 @@
+
+
+<header class="main-header">
+    <div class="containerc container--flex">
+      <div class="main-header__container">
+        <img src="../assets/logopng2.png" style="height: 15%; width: 15%; margin: auto;" alt="">
+        <h1 class="main-header__title" >Almacén <strong>Veicor</strong></h1>
+        <span class="icon-menu" id="btn-menu"><i class="fas fa-bars"></i></span>
+        <nav class="main-nav" id="main-nav">
+          <ul class="menu">
+            <li class="menu__item"><a [routerLink]="['/inicio']"class="menu__link">INICIO</a></li>
+            <li class="menu__item"><a [routerLink]="['/tienda']" class="menu__link">TIENDA</a></li>
+         
+          </ul>
+        </nav>
+      </div>
+      <div class="main-header__container">
+        <span class="main-header__txt">¿Necesitas ayuda?</span>
+        <p class="main-header__txt"><i class="fas fa-phone"></i> LLama 0989167751</p>
+      </div>
+      <div class="main-header__container">
+        <a  href="" class="main-header__btn" [routerLink]="[ '/pago']"> <i class="fas fa-shopping-cart"></i></a>
+        
+        <button style="background:white; border-color: white; cursor: pointer;"  class="main-header__link"><i class="fas fa-user"></i> Salir</button>
+        <input type="search" class="main-header__input" placeholder="Buscar"><i class="fas fa-search"></i>
+      </div>
+    </div>
+  </header>
+
+
+
+  
+  <router-outlet></router-outlet>
+  
+  
+  
+  <footer class="main-footer">
+    <div class="footer__section">
+      <h2 class="footer__title">Acerca de</h2>
+      <p class="footer__txt">Contamos con variedad de productos para el hogar a los mejores precios del mercado.
+        Productos de temporada, cristalería, regalaría, juguetería, plásticos y desechables.
+        Realizamos entregas dentro y fuera de la cuidad</p>
+    </div>
+    <div class="footer__section">
+      <h2 class="footer__title">Dirección</h2>
+      <p class="footer__txt">Avenida 4 de noviembre 130802 Manta, Ecuador</p>
+      <h2 class="footer__title">Contactos</h2>
+      <p class="footer__txt">Telefono : +593 98 916 7751</p>
+      <p class="footer__txt">Correo : producto.hogar25@gmail.com
+      </p>
+    </div>
+    <!-- <div class="footer__section">
+      <h2 class="footer__title">Quick Links</h2>
+      <a href="" class="footer__link">Home</a>
+      <a href="" class="footer__link">About</a>
+      <a href="" class="footer__link">Error</a>
+      <a href="" class="footer__link">Shop</a>
+      <a href="" class="footer__link">Contact Us</a>
+    </div> -->
+    <!-- <div class="footer__section">
+      <h2 class="footer__title">Sign up for your offers</h2>
+      <p class="footer__txt">By subscribing to our mailing list you will always get latest news and updates from us.</p>
+      <input type="email" class="footer__input" placeholder="Enter your email">
+    </div> -->
+    <p class="copy">© 2021 ALMACEN VEICOR | TODOS LOS DERECHOS RESERVADOS</p>
+  </footer>
+  
