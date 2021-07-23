@@ -5,13 +5,13 @@
                 <img src="../../../assets/logopng2.png" alt="IMG">
             </div>
 
-            <form class="login100-form validate-form">
+            <form class="login100-form validate-form" #registroForm="ngForm" (ngSubmit)="onSubmit(registroForm)">
                 <span class="login100-form-title">
                     Registro de cuenta
                 </span>
 
                 <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                    <input class="input100" type="text" name="nombre" placeholder="Nombre completo">
+                    <input class="input100" type="text" name="nombre" placeholder="Nombre completo" #name="ngModel" [(ngModel)]="usuario.name">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
                         <i class="fa fa-user" aria-hidden="true"></i>
@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                    <input class="input100" type="text" name="email" placeholder="Email">
+                    <input class="input100" type="text" name="email" placeholder="Email"  #email="ngModel" [(ngModel)]="usuario.email">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -28,7 +28,7 @@
 
                 
                 <div class="wrap-input100 validate-input" data-validate = "Password is required">
-                    <input class="input100" type="password" name="pass" placeholder="Password">
+                    <input class="input100" type="password" name="pass" placeholder="Password" #password="ngModel" [(ngModel)]="usuario.password">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
                         <i class="fa fa-lock" aria-hidden="true"></i>
@@ -36,7 +36,7 @@
                 </div>
                 
                 <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                    <input class="input100" type="text" name="nombre" placeholder="Número celular">
+                    <input class="input100" type="text" name="nombre" placeholder="Número celular" #cellphone="ngModel" [(ngModel)]="usuario.cellphone">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
                         <i class="fa fa-phone" aria-hidden="true"></i>
