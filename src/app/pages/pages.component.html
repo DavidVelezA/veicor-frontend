@@ -10,7 +10,8 @@
           <ul class="menu">
             <li class="menu__item"><a [routerLink]="['/inicio']"class="menu__link">INICIO</a></li>
             <li class="menu__item"><a [routerLink]="['/tienda']" class="menu__link">TIENDA</a></li>
-         
+            <li class="menu__item" *ngIf="identity.role == 'ROLE_USER'"><a [routerLink]="['/productos']"class="menu__link">PRODUCTOS</a></li>
+            <!-- <li class="menu__item" *ngIf="identity.role == 'ROLE_USER'"><a [routerLink]="['/usuarios']" class="menu__link">USUARIOS</a></li> -->
           </ul>
         </nav>
       </div>
@@ -20,8 +21,8 @@
       </div>
       <div class="main-header__container">
         <a  href="" class="main-header__btn" [routerLink]="[ '/pago']"> <i class="fas fa-shopping-cart"></i></a>
-        
-        <button style="background:white; border-color: white; cursor: pointer;"  class="main-header__link"><i class="fas fa-user"></i> Salir</button>
+
+        <button style="background:white; border-color: white; cursor: pointer;"  class="main-header__link" (click)="cerrarSesion()"><i class="fas fa-user" ></i> Salir</button>
         <input type="search" class="main-header__input" placeholder="Buscar"><i class="fas fa-search"></i>
       </div>
     </div>
@@ -29,11 +30,11 @@
 
 
 
-  
+
   <router-outlet></router-outlet>
-  
-  
-  
+
+
+
   <footer class="main-footer">
     <div class="footer__section">
       <h2 class="footer__title">Acerca de</h2>
@@ -64,4 +65,3 @@
     </div> -->
     <p class="copy">© 2021 ALMACEN VEICOR | TODOS LOS DERECHOS RESERVADOS</p>
   </footer>
-  

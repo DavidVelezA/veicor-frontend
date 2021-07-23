@@ -1,6 +1,6 @@
 <div class="container">
 
-    <div class="col-4 mt-5 mb-5">
+    <!-- <div class="col-4 mt-5 mb-5">
 
       <select class="custom-select">
         <option selected>Seleccione una categoria</option>
@@ -8,56 +8,28 @@
         <option value="2">Two</option>
         <option value="3">Three</option>
       </select>
-    </div>
-
+    </div> -->
+<br><br><br>
     <main class="main">
         <!-- <div class="container"> -->
           <!-- <h2 class="main-title">New Arrivals for you</h2> -->
           <section class="container-products">
-            <div class="product">
+            <div class="product" *ngFor="let product of productos">
               <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Lentes_del_Ojo_de_cristal..jpg" alt="" class="product__img">
               <div class="product__description">
-                <h3 class="product__title">Farenheit (Grey)</h3>
-                <span class="product__price">$575.00</span>
+                <h3 class="product__title">{{product.title}}</h3>
+                <span class="product__price">{{'$'+product.price}}</span>
               </div>
               <i class="product__icon fas fa-cart-plus"></i>
+              <button class="btn btn-warning btn-sm mt-2" [routerLink]="['/producto', product._id]">Editar</button>
+              <button class="btn btn-danger btn-sm mt-2 ml-2" (click)="eliminar(product._id)">Eliminar</button>
+
             </div>
-            <div class="product">
-              <img src="https://www.nunsarangoptical.com/blog/wp-content/uploads/2019/03/nunsarang-usar-lentes-de-sol-mas-seguido.jpg" alt="" class="product__img">
-              <div class="product__description">
-                <h3 class="product__title">Opium (Grey)</h3>
-                <span class="product__price">$575.00</span>
-              </div>
-              <i class="product__icon fas fa-cart-plus"></i>
-            </div>
-            <div class="product">
-              <img src="https://c.pxhere.com/photos/91/35/glasses_accessoirs_fashion_sunglasses_sun_modern_backgrounds_elegance-1042997.jpg!d" alt="" class="product__img">
-              <div class="product__description">
-                <h3 class="product__title">Kenneth Cole</h3>
-                <span class="product__price">$575.00</span>
-              </div>
-              <i class="product__icon fas fa-cart-plus"></i>
-            </div>
-            <div class="product">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Gafas_de_sol_Rayban_Aviador.jpg" alt="" class="product__img">
-              <div class="product__description">
-                <h3 class="product__title">Farenheit Oval</h3>
-                <span class="product__price">$325.00</span>
-              </div>
-              <i class="product__icon fas fa-cart-plus" style="cursor: pointer;"></i>
-            </div>
-            <div class="product">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Gafas_de_sol_Rayban_Aviador.jpg" alt="" class="product__img">
-                <div class="product__description">
-                  <h3 class="product__title">Farenheit Oval</h3>
-                  <span class="product__price">$325.00</span>
-                </div>
-                <i class="product__icon fas fa-cart-plus" style="cursor: pointer;"></i>
-              </div>
+
           </section>
             <!-- </div> -->
-      
-      
+
+
       </main>
 
       <nav aria-label="Page navigation example" style="display: flex; justify-content: center;">

@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing, appRoutingProviders  } from './app.routing';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFileUploaderModule } from 'angular-file-uploader';
 
 
 import { AppComponent } from './app.component';
@@ -11,6 +13,8 @@ import { PagoComponent } from './components/pago/pago.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PagesComponent } from './pages/pages.component';
+import { ProductsComponent } from './components/admin/products/products.component';
+import { UsersComponent } from './components/admin/users/users.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +24,16 @@ import { PagesComponent } from './pages/pages.component';
     PagoComponent,
     LoginComponent,
     RegisterComponent,
-    PagesComponent
+    PagesComponent,
+    ProductsComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
     routing,
     FormsModule,
+    HttpClientModule,
+    AngularFileUploaderModule,
 
   ],
   providers: [

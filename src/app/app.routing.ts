@@ -1,3 +1,5 @@
+import { UsersComponent } from './components/admin/users/users.component';
+import { ProductsComponent } from './components/admin/products/products.component';
 // imports necesarios
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -20,6 +22,8 @@ import { PagesComponent } from './pages/pages.component';
 
 // definir las rutas
 const appRoutes: Routes = [
+  { path: '', component: LoginComponent },
+
 
       {
             path: '',
@@ -28,14 +32,21 @@ const appRoutes: Routes = [
                   [
 
                         // {path: '', component: LoginComponent},
+                        { path: 'inicio', component: InicioComponent },
                         { path: 'tienda', component: TiendaComponent },
-                        { path: 'inicio', component: InicioComponent },                        
+                        { path: 'tienda/:page', component: TiendaComponent },
+                        { path: 'productos', component: ProductsComponent },
+                        { path: 'producto/:id', component: ProductsComponent },
                         { path: 'pago', component: PagoComponent },
 
-                        
-                  ]
-            },
-            
+                        { path: 'usuarios', component: UsersComponent },
+
+
+
+
+                      ]
+                    },
+
             { path: 'login', component: LoginComponent },
             { path: 'registro', component: RegisterComponent },
             { path: '**', component: TiendaComponent },
