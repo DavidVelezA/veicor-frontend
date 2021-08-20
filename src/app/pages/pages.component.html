@@ -8,9 +8,11 @@
         <span class="icon-menu" id="btn-menu"><i class="fas fa-bars"></i></span>
         <nav class="main-nav" id="main-nav">
           <ul class="menu">
-            <li class="menu__item"><a [routerLink]="['/inicio']"class="menu__link">INICIO</a></li>
-            <li class="menu__item"><a [routerLink]="['/tienda']" class="menu__link">TIENDA</a></li>
-            <li class="menu__item" *ngIf="identity.role == 'ROLE_USER'"><a [routerLink]="['/productos']"class="menu__link">PRODUCTOS</a></li>
+            <li class="menu__item" *ngIf="identity.role == 'ROLE_USER'"><a [routerLink]="['/inicio']"class="menu__link">INICIO</a></li>
+            <li class="menu__item" ><a [routerLink]="['/tienda', 1]" class="menu__link">TIENDA</a></li>
+            <li class="menu__item" *ngIf="identity.role != 'ROLE_USER'"><a [routerLink]="['/productos']"class="menu__link">PRODUCTOS</a></li>
+
+            <li class="menu__item" *ngIf="identity.role != 'ROLE_USER'"><a [routerLink]="['/pedidos']"class="menu__link">PEDIDOS</a></li>
             <!-- <li class="menu__item" *ngIf="identity.role == 'ROLE_USER'"><a [routerLink]="['/usuarios']" class="menu__link">USUARIOS</a></li> -->
           </ul>
         </nav>
@@ -23,7 +25,7 @@
         <a  href="" class="main-header__btn" [routerLink]="[ '/pago']"> <i class="fas fa-shopping-cart"></i></a>
 
         <button style="background:white; border-color: white; cursor: pointer;"  class="main-header__link" (click)="cerrarSesion()"><i class="fas fa-user" ></i> Salir</button>
-        <input type="search" class="main-header__input" placeholder="Buscar"><i class="fas fa-search"></i>
+        <!-- <input type="search" class="main-header__input" placeholder="Buscar"><i class="fas fa-search"></i> -->
       </div>
     </div>
   </header>

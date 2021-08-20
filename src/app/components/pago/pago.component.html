@@ -1,39 +1,40 @@
 <div class="container">
     <h1 class="text-center mt-5 mb-5">Lista de productos</h1>
-    <ul class="list-group mb-5">
-        <li class="list-group-item">
-            <div class="row">
 
-            
+    <div class="alert alert-warning" role="alert" *ngIf="!existe">
+No existe productos que mostrar      </div>
+
+
+    <ul class="list-group mb-5" *ngIf="existe">
+        <li class="list-group-item" *ngFor="let product of carrito">
+            <div class="row">            
             <div class="col-2 mr-5" >
-                <img src="../../../assets/empleados.jpg" style="height: 200px; width: 200px;" alt="">
+                <img src="{{url+'img/'+product.products.image}}" style="height: 2    00px; width: 200px;" alt="">
+
             </div>
             
             <div class="col-9" >
-                <button class="btn  btn-danger btn-sm float-right" style="cursor: pointer;"><i class="far fa-trash-alt"></i></button>
-                <h2> titulo de producto </h2> 
+                <button class="btn  btn-danger btn-sm float-right" style="cursor: pointer;" (click)="delete(product._id)"><i class="far fa-trash-alt"></i></button>
+                <h2> {{product.products.title}} </h2> 
                 <hr>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit nihil animi quaerat nulla corporis eos rerum qui! Consectetur aliquid, deleniti in ipsa alias voluptas, doloremque exercitationem eius dolorem dolores animi!</p>
+                <p>{{product.products.content}}</p>
                 <hr>
+                <small>Cantidad: {{product.cantidad}}</small>
                 <div class="float-right">
-                    <h6>Precio por unidad: <strong>$1.50</strong></h6>
-                    <h6>Cantidad: <strong>2 unidades</strong></h6>
-                    <h6>Total: <strong>$3.00</strong></h6> 
-
+                    <h6>Precio por unidad: <strong>$ {{product.products.price}}</strong></h6>
+                  
+                    <h6>Total: <strong>${{product.products.price * product.cantidad}}</strong></h6> 
 
                 </div>
-
-            </div>
-           
+            </div>           
         </div>
-
         </li>
         <li class="list-group-item ">
             <div class="float-right">
-                <h6>Subtotal: <strong>$3.00</strong></h6> 
+                <!-- <h6>Subtotal: <strong>$3.00</strong></h6>  -->
                 <!-- <h6>IVA 12%: <strong>$0.36</strong></h6>  -->
-                <h5>Valor total a pagar: <strong>$3.00</strong></h5> 
-                <button class="btn btn-primary btn-sm mr-2"  >Pagar con PayPal</button>
+                <h5>Valor total a pagar: <strong>$ {{total_a_pagar}}</strong></h5> 
+                <!-- <button class="btn btn-primary btn-sm mr-2"  >Pagar con PayPal</button> -->
                 <button class="btn btn-warning btn-sm" (click)="subirComprobante()">Deposito bancario</button>
 
             </div>

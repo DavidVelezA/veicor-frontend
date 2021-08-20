@@ -14,6 +14,8 @@ import { RegisterComponent } from './components/register/register.component';
 // importar componentes
 import { TiendaComponent } from "./components/tienda/tienda.component";
 import { PagesComponent } from './pages/pages.component';
+import { PedidosComponent } from './components/pedidos/pedidos.component';
+import { FacturaComponent } from './components/factura/factura.component';
 
 
 
@@ -38,6 +40,8 @@ const appRoutes: Routes = [
                         { path: 'productos', component: ProductsComponent },
                         { path: 'producto/:id', component: ProductsComponent },
                         { path: 'pago', component: PagoComponent },
+                        { path: 'pedidos', component: PedidosComponent },
+                        { path: 'factura', component: FacturaComponent },
 
                         { path: 'usuarios', component: UsersComponent },
 

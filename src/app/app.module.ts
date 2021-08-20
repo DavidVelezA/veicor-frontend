@@ -4,6 +4,8 @@ import { routing, appRoutingProviders  } from './app.routing';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFileUploaderModule } from 'angular-file-uploader';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 import { AppComponent } from './app.component';
@@ -15,6 +17,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { PagesComponent } from './pages/pages.component';
 import { ProductsComponent } from './components/admin/products/products.component';
 import { UsersComponent } from './components/admin/users/users.component';
+import { PedidosComponent } from './components/pedidos/pedidos.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FacturaComponent } from './components/factura/factura.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,9 @@ import { UsersComponent } from './components/admin/users/users.component';
     RegisterComponent,
     PagesComponent,
     ProductsComponent,
-    UsersComponent
+    UsersComponent,
+    PedidosComponent,
+    FacturaComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +41,9 @@ import { UsersComponent } from './components/admin/users/users.component';
     FormsModule,
     HttpClientModule,
     AngularFileUploaderModule,
-
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [
     appRoutingProviders

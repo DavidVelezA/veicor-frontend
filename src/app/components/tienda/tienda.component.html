@@ -15,14 +15,28 @@
           <!-- <h2 class="main-title">New Arrivals for you</h2> -->
           <section class="container-products">
             <div class="product" *ngFor="let product of productos">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Lentes_del_Ojo_de_cristal..jpg" alt="" class="product__img">
+              <img src="{{url+'img/'+product.image}}" alt="" class="product__img">
               <div class="product__description">
                 <h3 class="product__title">{{product.title}}</h3>
                 <span class="product__price">{{'$'+product.price}}</span>
+                <br>
+                <label for="">Cantidad: </label>
+                <select name="cantidad" class="ml-1" id="cantidad" (change) = "obtenerCantidad($event)">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option> 
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                   <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
               </div>
-              <i class="product__icon fas fa-cart-plus"></i>
-              <button class="btn btn-warning btn-sm mt-2" [routerLink]="['/producto', product._id]">Editar</button>
-              <button class="btn btn-danger btn-sm mt-2 ml-2" (click)="eliminar(product._id)">Eliminar</button>
+              <i class="product__icon fas fa-cart-plus btn" (click)="aggCarrito(product._id)"></i>
+              <button class="btn btn-warning btn-sm mt-2" *ngIf="identity.role != 'ROLE_USER'" [routerLink]="['/producto', product._id]">Editar</button>
+              <button class="btn btn-danger btn-sm mt-2 ml-2" *ngIf="identity.role != 'ROLE_USER'" (click)="eliminar(product._id)">Eliminar</button>
 
             </div>
 
@@ -33,22 +47,12 @@
       </main>
 
       <nav aria-label="Page navigation example" style="display: flex; justify-content: center;">
-        <ul class="pagination mt-5">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-              <span class="sr-only">Previous</span>
-            </a>
+        <ul class="pagination mt-4" >
+          <li class="page-item"><a class="page-link" [routerLink]="['/tienda', prev_page]" tabindex="-1">&laquo;</a></li>
+          <li class="page-item" *ngFor="let num of number_pages">
+              <a class="page-link " [routerLink]="['/tienda', num]">{{num}}</a>
           </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-              <span class="sr-only">Next</span>
-            </a>
-          </li>
-        </ul>
+          <li class="page-item"><a class="page-link" [routerLink]="['/tienda', next_page]">&raquo;</a></li>
+      </ul>
       </nav>
 </div>

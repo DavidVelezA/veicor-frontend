@@ -24,6 +24,7 @@ export class ProductsComponent implements OnInit {
 
   public action = true;
   public id;
+  public url = global.url;
 
   public identity;
 
@@ -32,7 +33,7 @@ export class ProductsComponent implements OnInit {
     formatsAllowed: ".jpg, .png, .gif, .jpeg",
     maxSize: "50",
     uploadAPI: {
-      url: global.url + 'upload',
+      url: this.url + 'upload-img',
       // headers: {
       // "Authorization": this._userService.getToken()
       // }
@@ -85,11 +86,15 @@ export class ProductsComponent implements OnInit {
 
     if (this.action) {
 
-    this.producto.image = 'ds'
     this._productoService.registro(this.producto).subscribe(
       resp => {
+        if(this.producto.image) {
         this.success();
         form.reset();
+        } else {
+          this.validacionImagen()
+
+        }
 
       },
       err => {
@@ -183,7 +188,16 @@ this.getCategorias();
     Swal.fire({
       icon: 'error',
       title: 'A ocurrido algo inesperado',
-      text: 'Port favor intente de nuevo',
+      text: 'Por favor intente de nuevo',
+      showConfirmButton: true
+    });
+  }
+
+  validacionImagen() {
+    Swal.fire({
+      icon: 'error',
+      title: 'Validacion',
+      text: 'Agrege foto del producto',
       showConfirmButton: true
     });
   }
@@ -191,8 +205,8 @@ this.getCategorias();
 
 
   imageUpload(datos) {
-    let imagedata = JSON.parse(datos.response);
-    this.producto.image = imagedata.image;
+    // let imagedata = JSON.parse(datos.response);
+    this.producto.image = datos.body.file;
 
   }
 
