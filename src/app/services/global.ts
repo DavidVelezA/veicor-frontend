@@ -1,5 +1,3 @@
 export var global = {
- 
-    url: 'http://localhost:3999/api/',
-
-}
+  url: 'https://veicor-backend.azurewebsites.net/api/',
+};
