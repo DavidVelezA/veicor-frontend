@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { routing, appRoutingProviders  } from './app.routing';
+import { routing, appRoutingProviders } from './app.routing';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AngularFileUploaderModule } from 'angular-file-uploader';
-import {MatTableModule} from '@angular/material/table';
-import {MatPaginatorModule} from '@angular/material/paginator';
-
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { AppComponent } from './app.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
@@ -33,21 +31,18 @@ import { FacturaComponent } from './components/factura/factura.component';
     ProductsComponent,
     UsersComponent,
     PedidosComponent,
-    FacturaComponent
+    FacturaComponent,
   ],
   imports: [
     BrowserModule,
     routing,
     FormsModule,
     HttpClientModule,
-    AngularFileUploaderModule,
     BrowserAnimationsModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
   ],
-  providers: [
-    appRoutingProviders
-  ],
-  bootstrap: [AppComponent]
+  providers: [appRoutingProviders],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
