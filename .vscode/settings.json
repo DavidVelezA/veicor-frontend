@@ -1,0 +1,5 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/6c970fc8-76a4-4972-a5cf-73951c4bff39/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/angular-prueba-front",
+    "appService.deploySubpath": "dist\\frontend-veicor",
+    "appService.showBuildDuringDeployPrompt": false
+}
